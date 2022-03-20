@@ -85,3 +85,33 @@ pts3 = [Z; V_3*2];
 plot3(pts1(:,1), pts1(:,2), pts1(:,3))
 plot3(pts2(:,1), pts2(:,2), pts2(:,3))
 plot3(pts3(:,1), pts3(:,2), pts3(:,3))
+
+
+L=length(black_foam_pressure);
+
+bp=black_foam_pressure;
+cp=car_sponge_pressure;
+bt=black_foam_temperature;
+ct=car_sponge_temperature;
+bv=black_foam_vibration;
+cv=car_sponge_vibration;
+
+subplot(3,1,1);
+b_data=[bp;bt;bv];
+c_data=[cp;ct;cv];
+scatter(V_1*b_data,zeros(1,L),'filled','black');
+hold on;
+scatter(V_1*c_data,zeros(1,L),'filled','yellow');
+title('pressure');
+
+subplot(3,1,2);
+scatter(V_2*b_data,zeros(L),'filled','black');
+hold on;
+scatter(V_2*c_data,zeros(L),'filled','yellow');
+title('temperature');
+
+subplot(3,1,3);
+scatter(V_3*b_data,zeros(L),'filled','black');
+hold on;
+scatter(V_3*c_data,zeros(L),'filled','yellow');
+title('vibration');
