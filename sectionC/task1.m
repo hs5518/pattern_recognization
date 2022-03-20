@@ -105,13 +105,13 @@ scatter(V_1*c_data,zeros(1,L),'filled','yellow');
 title('pressure');
 
 subplot(3,1,2);
-scatter(V_2*b_data,zeros(L),'filled','black');
+scatter(V_2*b_data,zeros(1,L),'filled','black');
 hold on;
-scatter(V_2*c_data,zeros(L),'filled','yellow');
+scatter(V_2*c_data,zeros(1,L),'filled','yellow');
 title('temperature');
 
 subplot(3,1,3);
-scatter(V_3*b_data,zeros(L),'filled','black');
+scatter(V_3*b_data,zeros(1,L),'filled','black');
 hold on;
-scatter(V_3*c_data,zeros(L),'filled','yellow');
+scatter(V_3*c_data,zeros(1,L),'filled','yellow');
 title('vibration');
