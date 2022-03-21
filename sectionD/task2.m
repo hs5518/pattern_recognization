@@ -32,9 +32,8 @@ dataTestlabel=labelset(idx,:);
 %renaming the variables;
 DTrain=dataTrain1;
 DTest=dataTest1;
-DTrainL=dataTrainlabel;
-DTestL=dataTestlabel;
-
+DTrainL=dataTrainlabel(:,1);
+DTestL=dataTestlabel(:,1);
 
 Mdl = TreeBagger(50,DTrain,DTrainL,'OOBPrediction','On','Method','classification')
 view(Mdl.Trees{1},'Mode','graph')
