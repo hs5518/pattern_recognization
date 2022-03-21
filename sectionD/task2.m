@@ -23,7 +23,8 @@ class_name=["acrylic","black foam","car sponge","flour sack","kitchen sponge","s
 label_matrix="temp";
 for i=1:size(total_data,2)
     for j=1:size(total_data,1)
-        label_matrix(j,i)=class_name(floor((i-1)/10)+1);
+        %label_matrix(i,j)=class_name(floor((i-1)/10)+1);
+        label_matrix(j,i)=class_name(floor((i-1)/10)+1)
     end
 end
 labelset=label_matrix';
@@ -35,13 +36,18 @@ DTest=dataTest1;
 DTrainL=dataTrainlabel(:,1);
 DTestL=dataTestlabel(:,1);
 
-Mdl = TreeBagger(50,DTrain,DTrainL,'OOBPrediction','On','Method','classification')
+Mdl = TreeBagger(100,DTrain,DTrainL,'OOBPrediction','On','Method','classification')
 view(Mdl.Trees{1},'Mode','graph')
-predicted_labels = predict(Mdl,DTest);
+predicted_1 = predict(Mdl,DTest);
+view(Mdl.Trees{2},'Mode','graph')
+predicted_2 = predict(Mdl,DTest);
 
 figure;
-oobErrorBaggedEnsemble = oobError(Mdl);
-plot(oobErrorBaggedEnsemble)
-xlabel 'Trees number';
-ylabel 'Out-of-bag error';
+oobError = oobError(Mdl);
+plot(oobError);
+xlabel 'Number of grown trees';
+ylabel 'Out-of-bag classification error';
+
+test_cmatrix=confusionmat(DTestL,predicted_1);
+confusionchart(test_cmatrix,class_name);
 
