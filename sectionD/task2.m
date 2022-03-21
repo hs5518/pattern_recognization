@@ -23,8 +23,7 @@ class_name=["acrylic","black foam","car sponge","flour sack","kitchen sponge","s
 label_matrix="temp";
 for i=1:size(total_data,2)
     for j=1:size(total_data,1)
-        %label_matrix(i,j)=class_name(floor((i-1)/10)+1);
-        label_matrix(j,i)=class_name(floor((i-1)/10)+1)
+        label_matrix(j,i)=class_name(floor((i-1)/10)+1);
     end
 end
 labelset=label_matrix';
