@@ -20,42 +20,42 @@ for i = 1:length(mat_acrylic)
     load(prefix+mat_acrylic(i))
     acrylic(1,i) = F0pdc(time_step);
     acrylic(2,i) = F0pac(2,time_step);
-    acrylic(3,i) = F0tdc(time_step);
+    acrylic(3,i) = F0tac(time_step);
 end
 
 for i = 1:length(black_foam)
     load(prefix+mat_black_foam(i))
     black_foam(1,i) = F0pdc(time_step);
     black_foam(2,i) = F0pac(2,time_step);
-    black_foam(3,i) = F0tdc(time_step);
+    black_foam(3,i) = F0tac(time_step);
 end
 
 for i = 1:length(car_sponge)
     load(prefix+mat_car_sponge(i))
     car_sponge(1,i) = F0pdc(time_step);
     car_sponge(2,i) = F0pac(2,time_step);
-    car_sponge(3,i) = F0tdc(time_step);
+    car_sponge(3,i) = F0tac(time_step);
 end
 
 for i = 1:length(flour_sack)
     load(prefix+mat_flour_sack(i))
     flour_sack(1,i) = F0pdc(time_step);
     flour_sack(2,i) = F0pac(2,time_step);
-    flour_sack(3,i) = F0tdc(time_step);
+    flour_sack(3,i) = F0tac(time_step);
 end
 
 for i = 1:length(kitchen_sponge)
     load(prefix+mat_kitchen_sponge(i))
     kitchen_sponge(1,i) = F0pdc(time_step);
     kitchen_sponge(2,i) = F0pac(2,time_step);
-    kitchen_sponge(3,i) = F0tdc(time_step);
+    kitchen_sponge(3,i) = F0tac(time_step);
 end
 
 for i = 1:length(steel_vase)
     load(prefix+mat_steel_vase(i))
     steel_vase(1,i) = F0pdc(time_step);
     steel_vase(2,i) = F0pac(2,time_step);
-    steel_vase(3,i) = F0tdc(time_step);
+    steel_vase(3,i) = F0tac(time_step);
 end
 
 save('F0_PVT','acrylic','black_foam','car_sponge','flour_sack','kitchen_sponge','steel_vase');
